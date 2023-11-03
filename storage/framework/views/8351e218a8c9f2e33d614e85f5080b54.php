@@ -17,7 +17,7 @@
 <body>
     <div class= "header">
         <div class="logo">
-            <img src="company-logo.png" alt="Company Logo" height="40">
+            <img src="Sol_Invictus.webp" alt="Company Logo" height="50">
         </div>
         <div class="navigation">
             <a style="margin-top: 10px" href="#">Home </a>

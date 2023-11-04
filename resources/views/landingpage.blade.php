@@ -21,7 +21,6 @@
         </div>
         <div class="navigation">
             <a style="margin-top: 10px" href="#">Home </a>
-            <a style="margin-top: 10px" href="#">Contact</a>
             <a style="margin-top: 10px" href="#">About</a>
             <a href="{{ route('register.dashboard') }}" class="btn btn-info">Register</a>
             <a href="{{ route('login.dashboard') }}" class="btn btn-info">Log in</a>

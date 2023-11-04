@@ -24,6 +24,9 @@
             <button type="submit" class="bg-purple-700 text-white py-2 px-4 rounded-lg hover:bg-purple-800 transition duration-300">Log in</button>
         </form>
         <p class="text-center text-sm text-gray-600 mt-4">Don't have an account? <a href="<?php echo e(route('register.dashboard')); ?>" class="text-purple-700 hover:underline">Register</a></p>
+        <div class="flex justify-center mt-4"> 
+            <a href="<?php echo e(route('landpage.dashboard')); ?>" class="bg-white text-black px-4 py-2 rounded">Home</a>
+        </div>
     </div>
 </body>
 

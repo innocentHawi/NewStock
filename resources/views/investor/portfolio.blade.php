@@ -49,6 +49,7 @@
                     </div>
                     <div class="w-1/3">
                         <p style="color: {{ $portfolioItem['profit_loss'] < 0 ? 'red' : 'green' }}">
+
                             @if ($portfolioItem['profit_loss'] < 0)
                                 -{{ abs($portfolioItem['profit_loss']) }}
                             @else

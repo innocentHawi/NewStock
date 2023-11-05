@@ -8,11 +8,14 @@ use Illuminate\Validation\Rule;
 
 class StockController extends Controller
 {
+    //Admin delete stock
     public function admindeleteStock(Stock $stock){
         $stock->delete();
         
         return redirect('/admin');
-    }    
+    } 
+
+    //Small Business delete stock
     public function deleteStock(Stock $stock){
         if(auth()->user()->id === $stock['user_id']){
             $stock->delete();
@@ -33,6 +36,9 @@ class StockController extends Controller
         //$incomingFields['stock_name'] = strip_tags($incomingFields['stock_name']);
         $incomingFields['current_purchaseprice'] = strip_tags($incomingFields['current_purchaseprice']);
         $incomingFields['quantity'] = strip_tags($incomingFields['quantity']);
+
+        // Store the current purchase price as past purchase price
+        $stock->past_purchaseprice = $stock->current_purchaseprice;
 
         $stock->update($incomingFields);
         return redirect('/smallbusiness');

@@ -49,6 +49,7 @@
                     </div>
                     <div class="w-1/3">
                         <p style="color: <?php echo e($portfolioItem['profit_loss'] < 0 ? 'red' : 'green'); ?>">
+
                             <?php if($portfolioItem['profit_loss'] < 0): ?>
                                 -<?php echo e(abs($portfolioItem['profit_loss'])); ?>
 

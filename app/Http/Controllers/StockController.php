@@ -26,23 +26,28 @@ class StockController extends Controller
         if(auth()->user()->id !== $stock['user_id']){
             return redirect('/');
         }
-
+    
         $incomingFields = $request->validate([
-            //'stock_name' => 'required',
             'current_purchaseprice' => 'required',
             'quantity' => 'required'
         ]);
-
-        //$incomingFields['stock_name'] = strip_tags($incomingFields['stock_name']);
+    
         $incomingFields['current_purchaseprice'] = strip_tags($incomingFields['current_purchaseprice']);
         $incomingFields['quantity'] = strip_tags($incomingFields['quantity']);
-
-        // Store the current purchase price as past purchase price
+    
+        // Store the current purchase price as past2_purchaseprice
+        $stock->past2_purchaseprice = $stock->past1_purchaseprice;
+    
+        // Store the past purchase price as past1_purchaseprice
+        $stock->past1_purchaseprice = $stock->past_purchaseprice;
+    
+        // Store the current purchase price as past_purchaseprice
         $stock->past_purchaseprice = $stock->current_purchaseprice;
-
+    
         $stock->update($incomingFields);
         return redirect('/smallbusiness');
     }
+    
     public function showEditScreen(Stock $stock){
         if(auth()->user()->id !== $stock['user_id']){
             return redirect('/');

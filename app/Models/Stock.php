@@ -13,6 +13,8 @@ class Stock extends Model
         'stock_name',
         'current_purchaseprice',
         'past_purchaseprice',
+        'past1_purchaseprice',
+        'past2_purchaseprice',
         'quantity',
         'user_id',
         'type',

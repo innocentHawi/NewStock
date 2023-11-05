@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('stock_name')->unique();
             $table->integer('current_purchaseprice');
             $table->integer('past_purchaseprice')->nullable();
+            $table->integer('past1_purchaseprice')->nullable();
+            $table->integer('past2_purchaseprice')->nullable();
             $table->integer('quantity');
             $table->foreignId('user_id')->cosntrained('users');
             $table->string('type')->default('stock');//new

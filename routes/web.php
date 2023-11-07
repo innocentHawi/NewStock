@@ -64,6 +64,8 @@ Route::get('/smallbusiness/businessinformation', [SmallBusinessController::class
 Route::get('/edit-stock/{stock}', [StockController::class, 'showEditScreen']);
 Route::put('/edit-stock/{stock}', [StockController::class, 'updateStock']);
 Route::delete('/delete-stock/{stock}', [StockController::class, 'deleteStock']);
+
+
 //new
 Route::post('/buy-stock', [InvestorController::class, 'buyStock'])->name('buy-stock');
 //admin update Investor balance
@@ -92,3 +94,4 @@ Route::get('/investor', function () {
 Route::get('/smallbusiness/dashboard', [SmallBusinessController::class, 'smallBusinessinfo'])->name('smallbusiness.dashboard');
 //new
 Route::post('/sell-stock/{stock_id}', [InvestorController::class, 'sellStock'])->name('sell-stock');
+

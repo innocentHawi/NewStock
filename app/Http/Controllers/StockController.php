@@ -47,6 +47,7 @@ class StockController extends Controller
         $stock->update($incomingFields);
         return redirect('/smallbusiness');
     }
+
     
     public function showEditScreen(Stock $stock){
         if(auth()->user()->id !== $stock['user_id']){
